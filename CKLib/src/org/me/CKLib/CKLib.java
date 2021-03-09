@@ -28,16 +28,4 @@ public class CKLib {
     public static String cleanLine(String line) {
         return line;
     }
-    
-    public static boolean isProspect(String[] data) {
-        Pattern name = Pattern.compile("")
-    }
-    
-//    public static double calcPayment(double U, double b, double p) {
-//        double E;
-//        // write funtion to do power calculation
-//        // E = U * (b * (1 + b) ** p) / (1 + b) ** p -1);
-//        return E;
-//    }
-
 }
