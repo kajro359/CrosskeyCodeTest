@@ -24,8 +24,18 @@ public class CKApp {
      */
     public static void main(String[] args) throws Exception {
         // String path = "../Data/prospects.txt";
-        Prospect p = new Prospect("Kaj", 3, 30000, 1.9, 1);
-        p.calcPayment();
+        Prospect p = new Prospect("Jessica", 30, 300000, 5, 1);
         p.print();
+//        double b = 2;
+//        double c = -2;
+//        double a = MyMaths.power(b, c);
+//        System.out.println(b + "^" + c + " = " + a);
+//        System.out.println("Flooring 2: " + MyMaths.floor(2));
+//        
+//        double d = 16;
+//        int n = 4;
+//        System.out.println("root = " + MyMaths.findRoot(d, n));
+        
+        
     }   
 }
