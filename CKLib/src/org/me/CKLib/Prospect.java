@@ -11,28 +11,25 @@ package org.me.CKLib;
  */
 public class Prospect {
 
+    public static int COUNT = 0;
+    
     private final int id;
     private final String customer;
     private final double loan;
     private final double interest_rate;    
-    private final double interest;
+    // private final double interest;
     private final double number_of_payments;
     private double monthly_payment;
 
     public Prospect(String c, double years, double l, double i, int id_no) {
+        COUNT++;
         customer = c;
         number_of_payments = years * 12;
         loan = l;
-        interest_rate = MyMaths.monthlyInterestRate(i*0.01);
+        interest_rate = MyMaths.monthlyInterestRate(i / 100);
         //interest_rate = i / 12 / 100;
-        interest = 
         id = id_no;
-        this.calcPayment();
-        System.out.println("Prospect created: ");
-        System.out.println("Name: " + customer);
-        System.out.println("Loan: " + loan);
-        System.out.println("Monthly interest rate: " + interest_rate);
-        System.out.println("Payments: " + number_of_payments);        
+        this.calcPayment();      
     }
 
     private void calcPayment() {

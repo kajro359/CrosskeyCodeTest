@@ -14,18 +14,5 @@ import java.util.Scanner;
  */
 public class CKLib {
 
-    public static void testScan() throws Exception {
-        String path = "../Data/prospects.txt";
-        Scanner sc = new Scanner(new File(path));
-        sc.useDelimiter(",");
 
-        while (sc.hasNext()) {
-            System.out.println(sc.next());
-            System.out.println("");
-        }
-    }
-
-    public static String cleanLine(String line) {
-        return line;
-    }
 }
