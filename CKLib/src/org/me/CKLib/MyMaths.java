@@ -73,8 +73,4 @@ public class MyMaths {
         }
     }
 
-    public static double monthlyInterestRate(double yearly) {
-        return findRoot((1 + yearly), 12) - 1;
-    }
-
 }

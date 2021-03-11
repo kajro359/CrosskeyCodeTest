@@ -12,11 +12,11 @@ package org.me.CKLib;
 public class Prospect {
 
     public static int COUNT = 0;
-    
+
     private final int id;
     private final String customer;
     private final double loan;
-    private final double interest_rate;    
+    private final double interest_rate;
     // private final double interest;
     private final double number_of_payments;
     private double monthly_payment;
@@ -26,14 +26,18 @@ public class Prospect {
         customer = c;
         number_of_payments = years * 12;
         loan = l;
-        interest_rate = MyMaths.monthlyInterestRate(i / 100);
+        interest_rate = monthlyInterestRate(i / 100);
         //interest_rate = i / 12 / 100;
         id = id_no;
-        this.calcPayment();      
+        monthly_payment = calcPayment();
     }
 
-    private void calcPayment() {
-        this.monthly_payment = this.interest_rate == 0
+    private static double monthlyInterestRate(double yearly) {
+        return MyMaths.findRoot((1 + yearly), 12) - 1;
+    }
+
+    private double calcPayment() {
+        return this.interest_rate == 0
                 ? this.loan / this.number_of_payments
                 : (this.loan * this.interest_rate
                 * MyMaths.power((1 + this.interest_rate), this.number_of_payments))

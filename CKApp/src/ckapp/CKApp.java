@@ -21,16 +21,17 @@ import org.me.CKLib.Prospect;
  */
 public class CKApp {
 
-    private static String cleanString(String s) {
-        
-    }
+//    private static String cleanString(String s) {
+//        
+//    }
      
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        // Prospect p = new Prospect("Jessica", 30, 300000, 5, 1);
-        // p.print();          
+        Prospect p = new Prospect("Jessica", 30, 300000, 5, 1);        
+        p.print();          
+        System.out.println(Prospect.COUNT);
         String path = "../Data/prospects.txt";
         String line = "";
         Scanner sc = new Scanner(new File(path));
@@ -40,5 +41,6 @@ public class CKApp {
             
             System.out.println(line);
         }
+        
     }
 }

@@ -43,12 +43,10 @@ public class MyMathsTest {
     @Test
     public void testRound() {
         System.out.println("round");
-        double num = 0.1;
-        double expResult = 0.0;
+        double num = 1.1;
+        double expResult = 1.0;
         double result = MyMaths.round(num);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -57,12 +55,10 @@ public class MyMathsTest {
     @Test
     public void testCeil() {
         System.out.println("ceil");
-        double num = 0.0;
-        double expResult = 0.0;
+        double num = 2.333;
+        double expResult = 3.0;
         double result = MyMaths.ceil(num);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0.0);        
     }
 
     /**
@@ -71,12 +67,10 @@ public class MyMathsTest {
     @Test
     public void testFloor() {
         System.out.println("floor");
-        double num = 0.0;
-        double expResult = 0.0;
+        double num = 2.988;
+        double expResult = 2.0;
         double result = MyMaths.floor(num);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0.0);        
     }
 
     /**
@@ -89,8 +83,6 @@ public class MyMathsTest {
         double expResult = 1.0;
         double result = MyMaths.abs(num);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -99,13 +91,11 @@ public class MyMathsTest {
     @Test
     public void testFindRoot() {
         System.out.println("findRoot");
-        double x = 0.0;
-        int n = 0;
-        double expResult = 0.0;
+        double x = 32;
+        int n = 5;
+        double expResult = 2.0;
         double result = MyMaths.findRoot(x, n);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0.001);
     }
 
     /**
@@ -114,27 +104,12 @@ public class MyMathsTest {
     @Test
     public void testPower() {
         System.out.println("power");
-        double val = 0.0;
-        double exp = 0.0;
-        double expResult = 0.0;
+        double val = 4.0;
+        double exp = 3.0;
+        double expResult = 64.0;
         double result = MyMaths.power(val, exp);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of monthlyInterestRate method, of class MyMaths.
-     */
-    @Test
-    public void testMonthlyInterestRate() {
-        System.out.println("monthlyInterestRate");
-        double yearly = 0.0;
-        double expResult = 0.0;
-        double result = MyMaths.monthlyInterestRate(yearly);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }
