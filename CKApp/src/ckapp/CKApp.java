@@ -21,13 +21,9 @@ import org.me.CKLib.Prospect;
  * @author kaj
  */
 public class CKApp {
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws Exception {
 
-        String path = "../Data/prospects.txt";
+    public static void main(String[] args) throws Exception {
+        String path = args[0]; //path to input file
         String line = "";
         Scanner sc = new Scanner(new File(path));
         sc.useDelimiter("\n");
@@ -35,7 +31,6 @@ public class CKApp {
 
         while (sc.hasNext()) {
             line = sc.next();
-            // System.out.println(line);
             if (!CKLib.checkLine(line)) {
                 line = CKLib.cleanLine(line);
             }
@@ -46,13 +41,12 @@ public class CKApp {
         String prospect_data = "";
         String[] lines = data_string.split("\\n");
         Prospect[] prospects = new Prospect[lines.length];
-        for(String l : lines) {
-            prospect_data = l + String.format(",%d", count+1);
-            // System.out.println(prospect_data);            
+        for (String l : lines) {
+            prospect_data = l + String.format(",%d", count + 1);
             prospects[count] = new Prospect(prospect_data);
             count++;
         }
-        for(Prospect p: prospects) {
+        for (Prospect p : prospects) {
             p.print();
         }
     }

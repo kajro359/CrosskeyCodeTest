@@ -6,6 +6,7 @@
 package org.me.CKLib;
 
 /**
+ * Simple class to do some basic math
  *
  * @author kaj
  */
@@ -14,11 +15,11 @@ public class MyMaths {
     public static double round(double num) {
         return num % 1 > 0.5 ? ceil(num) : floor(num);
     }
-    
+
     public static double ceil(double num) {
         return floor(num) + 1;
     }
-    
+
     public static double floor(double num) {
         return num - num % 1;
     }
@@ -37,16 +38,15 @@ public class MyMaths {
         } else {
             low = 1;
             high = x;
-        }        
+        }
         double epsilon = 0.0000001;
-        
+
         // Do binary search
         double guess = (low + high) / 2;
         while (abs(power(guess, n) - x) >= epsilon) {
-            if (power(guess, n ) > x) {
+            if (power(guess, n) > x) {
                 high = guess;
-            }
-            else {
+            } else {
                 low = guess;
             }
             guess = (low + high) / 2;
@@ -58,19 +58,13 @@ public class MyMaths {
         double res = 1;
         for (int i = 0; i < abs(k); i++) {
             res *= a;
-        }        
+        }
         return res;
     }
 
-    // TODO: make capable of handling fractional exponent
-    // will only handle rational exponent
     public static double power(double val, double exp) {
-        if (exp != 0) {
-            double result = powLoop(val, floor(exp));
-            return exp > 0 ? result : 1 / result;
-        } else {
-            return 1;
-        }
+        double result = powLoop(val, floor(exp));
+        return exp > 0 ? result : 1 / result;
     }
 
 }

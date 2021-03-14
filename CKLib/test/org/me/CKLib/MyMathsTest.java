@@ -105,8 +105,8 @@ public class MyMathsTest {
     public void testPower() {
         System.out.println("power");
         double val = 4.0;
-        double exp = 3.0;
-        double expResult = 64.0;
+        double exp = 0.0;
+        double expResult = 1.0;
         double result = MyMaths.power(val, exp);
         assertEquals(expResult, result, 0.0);
     }

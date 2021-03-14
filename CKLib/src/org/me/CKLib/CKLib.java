@@ -21,16 +21,19 @@ public class CKLib {
     }
 
     public static boolean checkLine(String l) {
-        return l.matches("^[A-Za-zÅÄÖåäöÉéÜüß]*.[A-Za-zÅÄÖ*åäöÉéÜüß]*,"
+//        return l.matches("^[A-Za-zÅÄÖåäöÉéÜüß]*.[A-Za-zÅÄÖ*åäöÉéÜüß]*,"
+//                + "[0-9]+\\.?[0-9]*,[0-9]+\\.?[0-9]*,[0-9]+");
+        return l.matches("^[\\p{Alpha}]*.[\\p{Alpha}]*,"
                 + "[0-9]+\\.?[0-9]*,[0-9]+\\.?[0-9]*,[0-9]+");
     }
 
     public static String cleanLine(String line) {
 
         String a = "";
-        Pattern p = Pattern.compile("[A-Za-zÅÄÖåäöÉéÜüß]+."
-                + "[A-Za-zÅÄÖåäöÉéÜüß]*");
+        Pattern p = Pattern.compile("[\\p{Alpha}]+.?"
+                + "[\\p{Alpha}]*");
 
+        line = line.replaceAll("[^[\\p{Alnum}|,]]", "");
         Matcher m = p.matcher(line);
         if (m.find()) {
             int ind0 = m.start();
@@ -39,12 +42,14 @@ public class CKLib {
             char[] nm = extractChars(line, ind0, ind1);
             for (char c : nm) {
                 name += c;
+            }            
+            name = name.replaceAll("[^\\p{Alpha}]", " ");
+            if (name.endsWith(" ")) {
+                name = name.replace(" ",",");
             }
-            name = name.replaceAll("[^A-Za-zÅÄÖåäöÉéÜüß]", " ");
-            name = name.trim();
             a += name;
             // get numbers
-            char[] nums = extractChars(line, ind1 + 1, line.length());
+            char[] nums = extractChars(line, ind1, line.length());
             for (char c : nums) {
                 a += c;
             }

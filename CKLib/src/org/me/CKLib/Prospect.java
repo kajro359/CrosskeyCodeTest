@@ -26,8 +26,8 @@ public class Prospect {
         COUNT++;
         customer = data[0];
         loan = Double.valueOf(data[1]);
-        interest_rate = monthlyInterestRate(Double.valueOf(data[2]) / 100);        
-        number_of_payments = Integer.valueOf(data[3])* 12;
+        interest_rate = monthlyInterestRate(Double.valueOf(data[2]) / 100);
+        number_of_payments = Integer.valueOf(data[3]) * 12;
         //interest_rate = Double.valueOf(data[2]) / 12 / 100;
         id = Integer.valueOf(data[4]);
         monthly_payment = calcPayment();
@@ -48,9 +48,13 @@ public class Prospect {
     public void print() {
         System.out.println("*".repeat(100));
         System.out.println("Prospect " + this.id
-                + ": " + this.customer + " wants to borrow " + this.loan + " € "
-                + "for a period of " + this.number_of_payments / 12
-                + " years and pay " + this.monthly_payment + " € each month");
+                + ": " + this.customer + " wants to borrow "
+                + String.format("%.2f", this.loan)
+                + " € for a period of "
+                + String.format("%.0f", this.number_of_payments / 12)
+                + " years and pay "
+                + String.format("%.2f", this.monthly_payment)
+                + " € each month");
         System.out.println("*".repeat(100));
     }
 }
