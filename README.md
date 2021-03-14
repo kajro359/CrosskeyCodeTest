@@ -1,6 +1,6 @@
 # CrosskeyCodeTest
 
-To run app, go to CKApp/dist and run
+To run app, go to `CKApp/dist` and run
 ```
 java -jar CKApp.jar [path to input file]
 ```
