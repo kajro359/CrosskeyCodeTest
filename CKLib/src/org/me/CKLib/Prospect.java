@@ -21,14 +21,15 @@ public class Prospect {
     private final double number_of_payments;
     private double monthly_payment;
 
-    public Prospect(String c, double years, double l, double i, int id_no) {
+    public Prospect(String args) {
+        String[] data = args.split(",");
         COUNT++;
-        customer = c;
-        number_of_payments = years * 12;
-        loan = l;
-        interest_rate = monthlyInterestRate(i / 100);
-        //interest_rate = i / 12 / 100;
-        id = id_no;
+        customer = data[0];
+        loan = Double.valueOf(data[1]);
+        interest_rate = monthlyInterestRate(Double.valueOf(data[2]) / 100);        
+        number_of_payments = Integer.valueOf(data[3])* 12;
+        //interest_rate = Double.valueOf(data[2]) / 12 / 100;
+        id = Integer.valueOf(data[4]);
         monthly_payment = calcPayment();
     }
 
