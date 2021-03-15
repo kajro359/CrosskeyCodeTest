@@ -23,6 +23,7 @@ import org.me.CKLib.Prospect;
 public class CKApp {
 
     public static void main(String[] args) throws Exception {
+        
         String path = args[0]; //path to input file
         String line = "";
         Scanner sc = new Scanner(new File(path));
